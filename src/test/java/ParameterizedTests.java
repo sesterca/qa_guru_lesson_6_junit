@@ -62,7 +62,7 @@ public class ParameterizedTests {
         MainPage mainPage = open(MainPage.MAIN, MainPage.class);
         mainPage.openCatalog();
         mainPage.lookOverSection(menuSection);
-        List<String> actualMenuItemsList = mainPage.menuItemsList;
+        List<String> actualMenuItemsList = mainPage.getMenuItemsList();
     Assertions.assertEquals(expectedMenuItems, actualMenuItemsList);}
 
     @EnumSource(UserMenuItems.class)

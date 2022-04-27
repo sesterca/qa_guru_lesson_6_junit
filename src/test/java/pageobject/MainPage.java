@@ -21,13 +21,13 @@ public class MainPage {
 
     public SelenideElement geoPosition = $x("//div[@role='navigation']//button");
 
-    public SelenideElement cityInput = $x("//div[h2[contains(text(),'Выберите город')]]//div/input");
+    public SelenideElement cityInput = $x("//div[h2[contains(text(),'Выберите город')]]//div[@class='ui-a0a']");
 
     public SelenideElement catalog = $("[data-widget='catalogMenu']");
 
     public ElementsCollection menuItems = $$(byXpath("//div[@data-widget='catalogMenu']//div[@class='e1c']/a/span"));
 
-    public List<String> menuItemsList = menuItems.texts();
+    public List<String>getMenuItemsList() {return menuItems.texts();}
 
     public MainPage scrollToFooter(){
         footer.scrollTo();
