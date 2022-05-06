@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.ozon'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+    testImplementation(
+    'org.junit.jupiter:junit-jupiter:5.7.0',
+    'com.codeborne:selenide:6.4.0',
+    )
+
+
+testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
