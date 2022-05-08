@@ -37,6 +37,7 @@ public class ParameterizedTests {
                 .chooseGeoPosition()
                 .setCity(city)
                 .setCityLocality(locality);
+        Selenide.sleep(6000);
         Assertions.assertEquals(currentGeo,$x("//div[@role='navigation']//button//span/span").getText());
     }
 

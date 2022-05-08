@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.testng.annotations.AfterMethod;
 
 import java.time.Duration;
 import java.util.*;
@@ -21,7 +22,9 @@ public class MainPage {
 
     public SelenideElement geoPosition = $x("//div[@role='navigation']//button");
 
-    public SelenideElement cityInput = $x("//div[h2[contains(text(),'Выберите город')]]//div[@class='ui-a0a']");
+    public SelenideElement position = $x("//div[@role='navigation']//button//span/span");
+
+    public SelenideElement cityInput = $x("//input[@class='ui-h5 ui-h8']");
 
     public SelenideElement catalog = $("[data-widget='catalogMenu']");
 
@@ -67,4 +70,8 @@ public class MainPage {
     public void userMenuItemClick(UserMenuItems userMenuItem){
         $x("//span[@class='kc2' and text()='"+userMenuItem.nameUserMenuItem+"']").click();
     }
+
+    public String getGeoPosition(){
+        String position = $x("//div[@role='navigation']//button//span/span").getText();
+        return position;}
 }
